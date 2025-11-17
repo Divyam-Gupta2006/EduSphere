@@ -22,7 +22,7 @@ export default function Navbar() {
           Login
         </button>
         </Link >
-        <Link to="/studentsignup"
+        <Link to="/studentsignup">
         <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 hover:opacity-80">
             Register
         </button>
@@ -31,3 +31,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

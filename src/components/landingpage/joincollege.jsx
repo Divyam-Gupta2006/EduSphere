@@ -5,7 +5,7 @@ export default function JoinCollege() {
     <section className="px-6 md:px-10 py-16 bg-white transition-colors">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
-          Bring Your College to EduSphere
+          Bring Your College to Prashikshan
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-6">
           Register your institution to connect with top companies, streamline internships, 

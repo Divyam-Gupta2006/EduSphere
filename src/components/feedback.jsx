@@ -5,7 +5,7 @@ const feedbacks = [
     name: "Priya S.",
     role: "Student, IIT Delhi",
     rating: 5,
-    quote: "EduSphere helped me land my dream internship! The mentorship and courses are top-notch.",
+    quote: "Prashikshan helped me land my dream internship! The mentorship and courses are top-notch.",
     img: "https://randomuser.me/api/portraits/women/65.jpg"
   },
   {

@@ -12,7 +12,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-4 text-lg text-black-700">
-          EduSphere connects students, colleges, and companies with
+          Prashikshan connects students, colleges, and companies with
           verified internships, trending courses, and 1:1 mentorship under
           a NEP-ready ecosystem.
         </p>

@@ -52,7 +52,7 @@ export default function Navbar({
             </button>
 
             <div className="flex items-baseline gap-3 cursor-default">
-              <div className="text-2xl font-extrabold text-blue-600 leading-none">EduSphere</div>
+              <div className="text-2xl font-extrabold text-blue-600 leading-none">Prashikshan</div>
             </div>
           </div>
 

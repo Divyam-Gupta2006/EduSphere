@@ -147,7 +147,7 @@ export default function StudentSignupCard({ onSignInClick } = {}) {
 
         {/* LEFT: Title + Tagline */}
         <div className="flex flex-col justify-center items-center p-12 bg-white">
-          <h1 className="text-7xl font-extrabold text-blue-600 leading-tight text-center">EduSphere</h1>
+          <h1 className="text-7xl font-extrabold text-blue-600 leading-tight text-center">Prashikshan</h1>
           <p className="mt-4 text-gray-600 text-lg font-medium text-center max-w-xs">
             Your Gateway to Internships & Skill Development
           </p>

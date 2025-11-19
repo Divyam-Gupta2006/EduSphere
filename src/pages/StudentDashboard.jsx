@@ -25,10 +25,7 @@ export default function StudentDashboard() {
 
       {/* IMPORTANT: add top padding so fixed navbar doesn't cover content */}
       <div className="pt-20">
-        <main className="max-w-6xl mx-auto p-6">
-          <h1 className="text-2xl font-semibold mb-4">Student Dashboard (page content)</h1>
-          <p className="text-sm text-gray-600">Your dashboard content goes here.</p>
-        </main>
+
       </div>
 
       <Sidebar

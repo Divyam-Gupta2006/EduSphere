@@ -48,7 +48,7 @@ export default function StudentLoginCard({ onSignUpClick } = {}) {
         {/* LEFT SIDE */}
         <div className="flex flex-col justify-center items-center p-12 bg-white">
           <h1 className="text-7xl font-extrabold text-blue-600 leading-tight text-center">
-            EduSphere
+            Prashikshan
           </h1>
           <p className="mt-4 text-gray-600 text-lg font-medium text-center max-w-xs">
             Your Gateway to Internships & Skill Development
@@ -107,12 +107,14 @@ export default function StudentLoginCard({ onSignUpClick } = {}) {
               {error && <p className="text-sm text-red-600">{error}</p>}
 
               {/* Sign In */}
-              <button
+            <Link to="/studentdashboard">
+                          <button
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
               >
                 Sign In
               </button>
+              </Link>
 
               {/* Forgot password */}
               <div className="text-center">

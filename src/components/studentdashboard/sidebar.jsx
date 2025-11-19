@@ -66,7 +66,7 @@ export default function Sidebar({
           {/* header */}
           <div className="flex items-center justify-between px-4 py-4 border-b">
             <div className="flex items-center gap-3">
-              <div className="text-lg font-bold text-blue-600">EduSphere</div>
+              <div className="text-lg font-bold text-blue-600">Prashikshan</div>
             </div>
 
             <div className="flex items-center gap-2">

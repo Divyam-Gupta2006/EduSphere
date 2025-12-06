@@ -11,6 +11,9 @@ import Internships from "../src/pages/InternshipsPage.jsx";
 import Courses from "../src/pages/CoursesPage.jsx";
 import Mentors from "../src/pages/MentorsPage.jsx";
 import Certificates from "../src/pages/Certificates.jsx";
+import MentorLoginPage from "./pages/MentorLoginPage.jsx";
+import MentorSignupPage from "./pages/MentorSignupPage.jsx";
+import MentorDashboard from "./pages/MentorDashboard.jsx";
 
 
 
@@ -41,6 +44,9 @@ export default function App() {
         <Route path="/mentors" element={<Mentors />} />
         <Route path="/academicdashboard" element={<AcademicDashboard />} />
         <Route path="/certificates" element={<Certificates />} />
+        <Route path="/mentorlogin" element={<MentorLoginPage />} />
+        <Route path="/mentorsignup" element={<MentorSignupPage />} />
+        <Route path="/mentordashboard" element={<MentorDashboard />} />
 
       </Routes>
     </div>

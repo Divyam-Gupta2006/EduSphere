@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/studentdashboard/Navbar.jsx";
 import Sidebar from "../components/studentdashboard/sidebar.jsx";
+import Footer from "../components/studentdashboard/Footer.jsx";
 
 
 // ------------------------------------------------------------------
@@ -409,6 +410,7 @@ export default function MentorsPage() {
       )}
 
     </div>
+   ]
    </div>
   );
 }

@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import Navbar from "../components/studentdashboard/Navbar.jsx";
 import Sidebar from "../components/studentdashboard/sidebar.jsx";
-
+import Footer from "../components/studentdashboard/Footer.jsx";
 /**
  * LogbookPage.jsx
  * - Layout: 3-Column (Left: Stats/Tags | Center: Log Feed | Right: Todos/Activity)
@@ -366,7 +366,6 @@ export default function LogbookPage() {
           onSave={handleSaveLog} 
         />
       )}
-
     </div>
   );
 }

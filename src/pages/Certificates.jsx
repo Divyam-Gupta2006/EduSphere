@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import Navbar from "../components/studentdashboard/Navbar.jsx";
 import Sidebar from "../components/studentdashboard/sidebar.jsx";
+import Footer from "../components/studentdashboard/Footer.jsx";
 
 
 
@@ -143,6 +144,7 @@ export default function CertificatesPage() {
              <div className="h-4 w-32 bg-gray-300 rounded"></div>
           </div>
        </div>
+       
     );
   }
 
@@ -325,7 +327,10 @@ export default function CertificatesPage() {
          />
       )}
 
+      
+
     </div>
+
   );
 }
 

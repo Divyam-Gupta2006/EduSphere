@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../components/studentdashboard/Navbar.jsx";
 import Sidebar from "../components/studentdashboard/sidebar.jsx";
+import Footer from "../components/studentdashboard/Footer.jsx";
 
 const USE_MOCK = true;
 
@@ -537,6 +538,7 @@ export default function InternshipsPage() {
       </div>
 
       {selectedInternship && <ApplyModal internship={selectedInternship} onClose={() => setSelectedInternship(null)} />}
+     
     </div>
   );
 }

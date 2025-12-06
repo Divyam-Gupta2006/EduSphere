@@ -9,7 +9,7 @@ import {
   SquaresPlusIcon
 } from "@heroicons/react/24/outline";
 
-// ✅ FIXED: InputField is now defined OUTSIDE the main component
+// ✅ RESPONSIVE UPDATE: Text size adjusted for mobile to prevent zooming (text-base)
 const InputField = ({ label, icon: Icon, name, type = "text", value, onChange, ...props }) => (
   <div className="space-y-1">
     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">
@@ -24,10 +24,10 @@ const InputField = ({ label, icon: Icon, name, type = "text", value, onChange, .
       <input
         type={type}
         name={name}
-        value={value}           
-        onChange={onChange}    
+        value={value}
+        onChange={onChange}
         {...props}
-        className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-lg leading-5 bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 sm:text-sm shadow-sm"
+        className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-lg leading-5 bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200 text-base sm:text-sm shadow-sm"
       />
     </div>
   </div>
@@ -59,37 +59,42 @@ export default function ClassFormPolished({ onSubmit }) {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-[600px] p-6 bg-slate-100">
+    // ✅ RESPONSIVE UPDATE: Changed padding p-6 to p-4 for mobile, md:p-6 for desktop
+    <div className="flex justify-center items-center min-h-screen md:min-h-[600px] p-4 md:p-6 bg-slate-100">
       
       {/* Card Container */}
       <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
         
         {/* Bold Header */}
-        <div className="bg-indigo-600 p-8 text-white flex items-start justify-between relative overflow-hidden">
-          {/* Decorative Circle in background */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500 rounded-full opacity-50"></div>
+        {/* ✅ RESPONSIVE UPDATE: p-6 mobile, p-8 desktop */}
+        <div className="bg-indigo-600 p-6 md:p-8 text-white flex items-start justify-between relative overflow-hidden">
+          {/* Decorative Circle */}
+          <div className="absolute -top-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-indigo-500 rounded-full opacity-50"></div>
           
-          <div className="relative z-10">
-            <h2 className="text-3xl font-bold tracking-tight">Create Class</h2>
+          <div className="relative z-10 pr-4">
+            {/* ✅ RESPONSIVE UPDATE: text-2xl mobile, text-3xl desktop */}
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Create Class</h2>
             <p className="text-indigo-100 mt-2 text-sm">
-              Configure the details for your new academic session.
+              Configure details for your new session.
             </p>
           </div>
-          <div className="relative z-10 bg-indigo-500 p-3 rounded-xl shadow-lg">
-            <SquaresPlusIcon className="h-8 w-8 text-white" />
+          <div className="relative z-10 bg-indigo-500 p-2 md:p-3 rounded-xl shadow-lg shrink-0">
+            <SquaresPlusIcon className="h-6 w-6 md:h-8 md:w-8 text-white" />
           </div>
         </div>
 
         {/* Form Body */}
+        {/* ✅ RESPONSIVE UPDATE: Reduced padding and gap for mobile */}
         <form
           onSubmit={(e) => {
             e.preventDefault();
             onSubmit(formData);
           }}
-          className="p-8 space-y-8"
+          className="p-5 md:p-8 space-y-6 md:space-y-8"
         >
           {/* Row 1: Name & Code */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* ✅ RESPONSIVE UPDATE: Stack on mobile (grid-cols-1), side-by-side on desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
              <InputField 
                 label="Class Name" 
                 name="className" 
@@ -111,7 +116,7 @@ export default function ClassFormPolished({ onSubmit }) {
           </div>
 
           {/* Row 2: Dept, Section, Capacity */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
             <InputField 
                 label="Department" 
                 name="department" 
@@ -120,26 +125,29 @@ export default function ClassFormPolished({ onSubmit }) {
                 value={formData.department}
                 onChange={handleChange}
              />
-            <InputField 
-                label="Section" 
-                name="section" 
-                icon={PencilSquareIcon} 
-                placeholder="A"
-                value={formData.section}
-                onChange={handleChange}
-             />
-            <InputField 
-                label="Capacity" 
-                name="maxStudents" 
-                type="number" 
-                icon={UserGroupIcon}
-                value={formData.maxStudents}
-                onChange={handleChange}
-             />
+             {/* Section and Capacity can share a row on mobile to save height */}
+             <div className="grid grid-cols-2 gap-4 md:contents">
+                <InputField 
+                    label="Section" 
+                    name="section" 
+                    icon={PencilSquareIcon} 
+                    placeholder="A"
+                    value={formData.section}
+                    onChange={handleChange}
+                />
+                <InputField 
+                    label="Capacity" 
+                    name="maxStudents" 
+                    type="number" 
+                    icon={UserGroupIcon}
+                    value={formData.maxStudents}
+                    onChange={handleChange}
+                />
+             </div>
           </div>
 
           {/* Schedule */}
-          <div className="bg-slate-50 p-5 rounded-xl border border-slate-200">
+          <div className="bg-slate-50 p-4 md:p-5 rounded-xl border border-slate-200">
             <div className="flex items-center gap-2 mb-4">
               <CalendarIcon className="w-4 h-4 text-indigo-500" />
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
@@ -174,19 +182,19 @@ export default function ClassFormPolished({ onSubmit }) {
               </label>
              <textarea
                 name="description"
-                rows="2"
+                rows="3"
                 value={formData.description}
                 onChange={handleChange}
                 placeholder="Brief course overview..."
-                className="block w-full px-4 py-3 border border-slate-200 rounded-lg bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all resize-none shadow-sm text-sm"
+                className="block w-full px-4 py-3 border border-slate-200 rounded-lg bg-slate-50 text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all resize-none shadow-sm text-base sm:text-sm"
              />
           </div>
 
           {/* Footer Action */}
-          <div className="pt-4 flex justify-end">
+          <div className="pt-2 md:pt-4 flex justify-end">
             <button
               type="submit"
-              className="bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-200 transform active:scale-95 flex items-center gap-2"
+              className="w-full md:w-auto bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-200 transform active:scale-95 flex items-center justify-center gap-2"
             >
               <span>Create Class</span>
               <SquaresPlusIcon className="w-5 h-5" />

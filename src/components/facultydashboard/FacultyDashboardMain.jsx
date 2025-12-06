@@ -4,10 +4,13 @@ import React, { useState } from "react";
 import ManageClasses from "./manageclasses/ManageClasses.jsx";
 import CreateClass from "./manageclasses/CreateClass.jsx";
 import OverviewUI from "./OverviewUI.jsx";
-import AssignedStudentsUI from "./assignedstudents/AssignedStudents.jsx"; 
-// ⬆️ Make sure file path is correct (we can adjust if needed)
+import AssignedStudentsUI from "./assignedstudents/AssignedStudents.jsx";
+import PendingReviews from "./pendingreviews/PendingReviews.jsx";
+import Assessments from "./assessments/Assessments.jsx";
+import ChatFacultyStudent from "./chat/ChatFacultyStudent.jsx";
+import ReportsAndSignoff from "./reports/ReportsAndSignoff.jsx";   // ✅ NEW REPORTS PAGE
 
-// TEMP UI FOR PENDING MODULES
+// TEMP UI (if anything missing)
 const MissingTabUI = ({ tabName }) => (
   <div className="p-10 text-center">
     <h1 className="text-2xl font-bold">{tabName} Coming Soon</h1>
@@ -21,7 +24,7 @@ export default function FacultyDashboardMain({
 }) {
   const [isCreating, setIsCreating] = useState(false);
 
-  // ------------------------ HANDLERS -------------------------
+  // ------------------------ CLASS ACTION HANDLERS -------------------------
 
   const handleCreate = () => setIsCreating(true);
 
@@ -40,7 +43,9 @@ export default function FacultyDashboardMain({
     const newName = prompt("New class name:", cls.className);
     if (newName) {
       setClassList((prev) =>
-        prev.map((c) => (c.id === cls.id ? { ...c, className: newName } : c))
+        prev.map((c) =>
+          c.id === cls.id ? { ...c, className: newName } : c
+        )
       );
     }
   };
@@ -53,7 +58,7 @@ export default function FacultyDashboardMain({
     return `https://edusphere.com/join/${classId}`;
   };
 
-  // ------------------------ ROUTING --------------------------
+  // ------------------------ ROUTING SYSTEM --------------------------
 
   switch (activeTab) {
     case "Dashboard":
@@ -78,19 +83,19 @@ export default function FacultyDashboardMain({
       );
 
     case "Assigned Students":
-      return <AssignedStudentsUI />; // ✅ NOW ROUTES PROPERLY
+      return <AssignedStudentsUI />;
 
     case "Pending Reviews":
-      return <MissingTabUI tabName="Pending Reviews" />;
+      return <PendingReviews />;
 
     case "Assessments":
-      return <MissingTabUI tabName="Assessments" />;
+      return <Assessments />;
 
     case "Reports and Signoff":
-      return <MissingTabUI tabName="Reports and Signoff" />;
+      return <ReportsAndSignoff />; // ✅ FULL PAGE ADDED
 
     case "Chat Faculty Student":
-      return <MissingTabUI tabName="Chat Faculty Student" />;
+      return <ChatFacultyStudent />; // ✅ CHAT CONNECTED
 
     default:
       return <OverviewUI />;

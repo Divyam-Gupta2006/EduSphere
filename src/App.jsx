@@ -29,6 +29,9 @@ import SelectedStudents from "./pages/company/SelectedStudents";
 import RejectedStudents from "./pages/company/RejectedStudents";
 import RecruitedStudents from "./pages/company/RecruitedStudents";
 
+// NEW: Under Maintenance page
+import UnderMaintenance from "./pages/company/UnderMaintenance";
+
 // Company Layout Wrapper Component
 const CompanyDashboardWrapper = () => {
   return (
@@ -71,6 +74,10 @@ export default function App() {
           <Route path="recruited-students" element={<RecruitedStudents />} />
           <Route path="chat" element={<Chat />} />
           <Route path="student/:id" element={<StudentProfile />} />
+
+          {/* NEW: Settings & Help route to UnderMaintenance */}
+          <Route path="settings" element={<UnderMaintenance />} />
+          <Route path="help" element={<UnderMaintenance />} />
         </Route>
 
         {/* 404 - Catch all */}

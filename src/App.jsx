@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 // Adding .jsx extensions back to fix file resolution errors
 // Landing + Role Select
 import LandingPage from "./pages/LandingPage.jsx";
-import RoleSelectPage from "./pages/RoleSelectPage.jsx";
 
 // Student Pages
 import StudentSignUpPage from "./pages/StudentSignupPage.jsx";
@@ -20,7 +19,6 @@ import MentorLoginPage from "./pages/MentorLoginPage.jsx";
 import MentorSignupPage from "./pages/MentorSignupPage.jsx";
 import MentorDashboard from "./pages/MentorDashboard.jsx";
 import ProfilePage from "./pages/StudentProfile.jsx";
-
 import RoleSelectPage from "./pages/RoleSelectPage.jsx";
 import FacultyLoginPage from "./pages/FacultyLoginPage.jsx";
 import FacultySignupPage from "./pages/FacultySignupPage.jsx";

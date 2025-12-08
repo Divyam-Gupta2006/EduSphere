@@ -373,31 +373,100 @@ export default function StudentDashboardMain() {
 
   const renderSettings = () => (
      <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 max-w-2xl">
-           <h3 className="font-bold text-gray-900 mb-6">Profile Details</h3>
-           <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                 <div>
-                    <label className="block text-xs font-bold text-gray-500 mb-1">Full Name</label>
-                    <input type="text" value={data.user.name} readOnly className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50 focus:outline-none" />
-                 </div>
-                 <div>
-                    <label className="block text-xs font-bold text-gray-500 mb-1">Role</label>
-                    <input type="text" value={data.user.role} readOnly className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50 focus:outline-none" />
-                 </div>
-              </div>
-              <div>
-                 <label className="block text-xs font-bold text-gray-500 mb-1">Email Address</label>
-                 <input type="email" value={data.user.email} readOnly className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50 focus:outline-none" />
-              </div>
-              <div className="pt-4 border-t border-gray-100 flex justify-end gap-3">
-                 <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">Cancel</button>
-                 <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">Save Changes</button>
-              </div>
-           </div>
+  <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
+
+  {/* ---- PROFILE DETAILS ---- */}
+  <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 max-w-2xl">
+    <h3 className="font-bold text-gray-900 mb-6">Profile Details</h3>
+
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 gap-4">
+        <div>
+          <label className="block text-xs font-bold text-gray-500 mb-1">Full Name</label>
+          <input
+            type="text"
+            value={data.user.name}
+            readOnly
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50 focus:outline-none"
+          />
         </div>
-     </div>
+
+        <div>
+          <label className="block text-xs font-bold text-gray-500 mb-1">Role</label>
+          <input
+            type="text"
+            value={data.user.role}
+            readOnly
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50 focus:outline-none"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-xs font-bold text-gray-500 mb-1">Email Address</label>
+        <input
+          type="email"
+          value={data.user.email}
+          readOnly
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50 focus:outline-none"
+        />
+      </div>
+
+      <div className="pt-4 border-t border-gray-100 flex justify-end gap-3">
+        <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">
+          Cancel
+        </button>
+        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* ---- CHANGE PASSWORD ---- */}
+  <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6 max-w-2xl">
+    <h3 className="font-bold text-gray-900 mb-6">Change Password</h3>
+
+    <div className="space-y-4">
+      <div>
+        <label className="block text-xs font-bold text-gray-500 mb-1">Old Password</label>
+        <input
+          type="password"
+          placeholder="Enter your current password"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"
+        />
+      </div>
+
+      <div>
+        <label className="block text-xs font-bold text-gray-500 mb-1">New Password</label>
+        <input
+          type="password"
+          placeholder="Enter new password"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"
+        />
+      </div>
+
+      <div>
+        <label className="block text-xs font-bold text-gray-500 mb-1">Confirm New Password</label>
+        <input
+          type="password"
+          placeholder="Re-enter new password"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500"
+        />
+      </div>
+
+      <div className="pt-4 border-t border-gray-100 flex justify-end gap-3">
+        <button className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">
+          Cancel
+        </button>
+        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">
+          Update Password
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
   );
 
   return (
